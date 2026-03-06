@@ -7,12 +7,12 @@
   <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
   <link rel="manifest" href="/manifest.json">
   <title>Splash Test</title>
   <script src="https://unpkg.com/ios-pwa-splash-screen"></script>
   <script>
-    window.IosPwaSplashScreen.generateIosPwaSplash({ icon: { url: '/icon.png', backgroundColor: '#000000' } })
+    window.IosPwaSplashScreen.generateIosPwaSplash({ icon: { url: 'icon.png', backgroundColor: '#000000' } })
       .then(() => { document.getElementById('status').textContent = 'startup images: YES (' + document.querySelectorAll('link[rel="apple-touch-startup-image"]').length + ' injected)'; })
       .catch(e => { document.getElementById('status').textContent = 'startup images: FAILED — ' + e; });
   </script>
