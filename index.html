@@ -11,9 +11,14 @@
   <link rel="manifest" href="/manifest.json">
   <title>Splash Test</title>
   <script src="https://unpkg.com/ios-pwa-splash-screen"></script>
-  <script>window.IosPwaSplashScreen.generateIosPwaSplash({ icon: { url: '/icon.png', backgroundColor: '#000000' } });</script>
+  <script>
+    window.IosPwaSplashScreen.generateIosPwaSplash({ icon: { url: '/icon.png', backgroundColor: '#000000' } })
+      .then(() => { document.getElementById('status').textContent = 'startup images: YES (' + document.querySelectorAll('link[rel="apple-touch-startup-image"]').length + ' injected)'; })
+      .catch(e => { document.getElementById('status').textContent = 'startup images: FAILED — ' + e; });
+  </script>
 </head>
-<body style="margin:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;font-size:14px">
-  step 2 — library startup image
+<body style="margin:0;background:#000;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;font-size:13px;gap:8px">
+  <p style="margin:0">step 3 — library + visible icon + debug</p>
+  <p id="status" style="margin:0;color:#888">startup images: pending...</p>
 </body>
 </html>
